@@ -1,0 +1,84 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Lokalizacja jest już skonfigurowana",
+            "cannot_connect": "Nie udało się połączyć",
+            "invalid_response": "Nieprawidłowa odpowiedź API od serwera",
+            "no_data_available": "Brak danych dla wybranej stacji",
+            "unknown": "Nieoczekiwany błąd"
+        },
+        "error": {
+            "cannot_connect": "Nie udało się połączyć",
+            "invalid_response": "Nieprawidłowa odpowiedź API od serwera",
+            "no_data_available": "Brak danych dla wybranej stacji",
+            "unknown": "Nieoczekiwany błąd"
+        },
+        "step": {
+            "user": {
+                "description": "W jaki sposób chcesz wybrać stację SmogTok?",
+                "menu_options": {
+                "station_list": "Wybierz stację SmogTok z listy (zalecane)",
+                "station_id": "Wprowadź ręcznie ID stacji SmogTok (zaawansowane)"
+                },
+                "menu_option_descriptions": {
+                  "station_list": "Lista stacji SmogTok aktywnych w ostatnich 30 dniach",
+                  "station_id": "Wpisz ID stacji SmogTok"
+                }
+            },
+            "station_list": {
+                "description": "Lista stacji SmogTok aktywnych w ostatnich 30 dniach.\nJeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).",
+                "data": {
+                    "smogtok_station": "Stacja SmogTok"
+                },
+                "data_description": {
+                  "smogtok_station": "Wybierz stacje SmogTok z listy, aby skonfigurować."
+                }
+            },
+            "station_id": {
+                "description": "Aby uzyskać ID stacji SmogTok:\n1. wejdź na https://smogtok.com/deviceslist\n2. wybierz stację, z której chcesz uzyskać dane\n3. ID stacji znajduje się w adresie URL, np. dla https://smogtok.com/onedevice?probeId=3608 ID stacji to 3608",
+                "data": {
+                    "id": "ID stacji SmogTok"
+                },
+                "data_description": {
+                  "smogtok_station": "Wprowadź ID stacji SmogTok, aby skonfigurować."
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "air_quality": { "name": "Jakość powietrza" },
+            "air_quality_index": {
+                "name": "Indeks jakości powietrza",
+                "state": {
+                "bad": "Zła",
+                "good": "Dobra",
+                "moderate": "Umiarkowana",
+                "sufficient": "Dostateczna",
+                "very_bad": "Bardzo zła",
+                "very_good": "Bardzo dobra",
+                "no_data": "Brak danych"
+                },
+                "state_attributes": {
+                "options": {
+                    "state": {
+                    "bad": "Zła",
+                    "good": "Dobra",
+                    "moderate": "Umiarkowana",
+                    "sufficient": "Dostateczna",
+                    "very_bad": "Bardzo zła",
+                    "very_good": "Bardzo dobra",
+                    "no_data": "Brak danych"
+                    }
+                }
+                }
+            },
+            "temperature": {"name": "Temperatura"},
+            "humidity": {"name": "Wilgotność"},
+            "pressure": {"name": "Ciśnienie powietrza"},
+            "pm01": {"name": "PM0,1"},
+            "pm25": {"name": "PM2,5"},
+            "pm10": {"name": "PM10"}
+        }
+  }
+}

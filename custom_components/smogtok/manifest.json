@@ -1,0 +1,13 @@
+{
+  "domain": "smogtok",
+  "name": "SmogTok",
+  "codeowners": [
+    "@ptrkoz"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/ptrkoz/ha-smogtok",
+  "integration_type": "service",
+  "issue_tracker": "https://github.com/ptrkoz/ha-smogtok/issues",
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}

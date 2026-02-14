@@ -1,0 +1,84 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "How would you like to select SmogTok station?",
+        "menu_options": {
+          "station_list": "Select SmogTok station from the list (recommended)",
+          "station_id": "Enter SmogTok station ID manually (advanced)"
+        },
+        "menu_option_descriptions": {
+          "station_list": "List of SmogTok stations active in the last 30 days",
+          "station_id": "Provide ID of a SmogTok station"
+        }
+      },
+      "station_list": {
+        "description": "List of SmogTok stations active in the last 30 days.\nIf you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).",
+        "data": {
+          "smogtok_station": "SmogTok station"
+        },
+        "data_description": {
+          "smogtok_station": "Select SmogTok station from the list to configure."
+        }
+      },
+      "station_id": {
+          "description": "To get the SmogTok station ID:\n1. go to https://smogtok.com/deviceslist\n2. select the station from which you want to get data\n3. the station ID is in the URL address, e.g. for https://smogtok.com/onedevice?probeId=3608 the station ID is 3608",
+          "data": {
+            "id": "SmogTok station ID"
+          },
+          "data_description": {
+            "smogtok_station": "Enter SmogTok station ID to configure."
+          }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_response": "Invalid API response from the server",
+      "no_data_available": "No data available for selected station",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_location%]",
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_response": "Invalid API response from the server",
+      "no_data_available": "No data available for selected station",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "air_quality": { "name": "Air quality" },
+      "air_quality_index": {
+        "name": "Air quality index",
+        "state": {
+          "bad": "Bad",
+          "good": "Good",
+          "moderate": "Moderate",
+          "sufficient": "Sufficient",
+          "very_bad": "Very bad",
+          "very_good": "Very good",
+          "no_data": "No data"
+        },
+        "state_attributes": {
+          "options": {
+            "state": {
+              "bad": "Bad",
+              "good": "Good",
+              "moderate": "Moderate",
+              "sufficient": "Sufficient",
+              "very_bad": "Very bad",
+              "very_good": "Very good",
+              "no_data": "No data"
+            }
+          }
+        }
+      },
+      "temperature": {"name": "[%key:common::entity::sensor::temperature%]"},
+      "humidity": {"name": "[%key:common::entity::sensor::humidity%]"},
+      "pressure": {"name": "[%key:common::entity::sensor::air_pressure%]"},
+      "pm01": {"name": "PM1.0"},
+      "pm25": {"name": "PM2.5"},
+      "pm10": {"name": "PM10"}
+    }
+  }
+}
