@@ -1,10 +1,9 @@
 name: Test hassfest
 
 on:
-  pull_request:
-    branches: ["master"]
   push:
-    branches: ["master"]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   hassfest:
