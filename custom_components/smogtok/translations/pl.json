@@ -35,7 +35,7 @@
                 }
             },
             "station_id": {
-                "description": "Aby uzyskać ID stacji SmogTok:\n1. wejdź na https://smogtok.com/deviceslist\n2. wybierz stację, z której chcesz uzyskać dane\n3. ID stacji znajduje się w adresie URL, np. dla https://smogtok.com/onedevice?probeId=3608 ID stacji to 3608",
+                "description": "Aby uzyskać ID stacji SmogTok:\n1. wejdź na {deviceslist_url}\n2. wybierz stację, z której chcesz uzyskać dane\n3. ID stacji znajduje się w adresie URL, np. dla {example_deviceslist_url} ID stacji to {example_device_id}",
                 "data": {
                     "id": "ID stacji SmogTok"
                 },

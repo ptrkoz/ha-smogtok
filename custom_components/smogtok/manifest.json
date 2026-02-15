@@ -7,7 +7,7 @@
   "config_flow": true,
   "documentation": "https://github.com/ptrkoz/ha-smogtok",
   "integration_type": "service",
-  "issue_tracker": "https://github.com/ptrkoz/ha-smogtok/issues",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/ptrkoz/ha-smogtok/issues",
   "version": "1.0.0"
 }

@@ -35,7 +35,7 @@
                 }
             },
             "station_id": {
-                "description": "To get the SmogTok station ID:\n1. go to https://smogtok.com/deviceslist\n2. select the station from which you want to get data\n3. the station ID is in the URL address, e.g. for https://smogtok.com/onedevice?probeId=3608 the station ID is 3608",
+                "description": "To get the SmogTok station ID:\n1. go to {deviceslist_url}\n2. select the station from which you want to get data\n3. the station ID is in the URL address, e.g. for {example_deviceslist_url} the station ID is {example_device_id}",
                 "data": {
                     "id": "SmogTok station ID"
                 },

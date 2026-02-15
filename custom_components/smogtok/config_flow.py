@@ -92,7 +92,9 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
         )
 
         return self.async_show_form(
-            step_id="station_list", data_schema=schema, errors=errors
+            step_id="station_list",
+            data_schema=schema,
+            errors=errors,
         )
 
     async def async_step_station_id(
@@ -120,8 +122,16 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
 
                 return self.async_create_entry(title=response["NAME"], data=user_input)
 
+        placeholders = {
+            "deviceslist_url": "https://smogtok.com/deviceslist",
+            "example_deviceslist_url": "https://smogtok.com/onedevice?probeId=3608",
+            "example_device_id": "3608",
+        }
         return self.async_show_form(
-            step_id="station_id", data_schema=STEP_USER_DATA_SCHEMA, errors=errors
+            step_id="station_id",
+            data_schema=STEP_USER_DATA_SCHEMA,
+            errors=errors,
+            description_placeholders=placeholders,
         )
 
     async def validate_input(self, data: dict[str, Any]) -> dict[str, Any]:
