@@ -1,6 +1,5 @@
 {
     "config": {
-        "smogtok_station": "Stacja SmogTok",
         "abort": {
             "already_configured": "Lokalizacja jest już skonfigurowana",
             "cannot_connect": "Nie udało się połączyć",
@@ -41,7 +40,7 @@
                     "id": "ID stacji SmogTok"
                 },
                 "data_description": {
-                  "smogtok_station": "Wprowadź ID stacji SmogTok, aby skonfigurować."
+                  "id": "Wprowadź ID stacji SmogTok, aby skonfigurować."
                 }
             }
         }

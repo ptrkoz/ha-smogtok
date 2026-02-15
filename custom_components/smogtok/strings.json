@@ -1,6 +1,5 @@
 {
   "config": {
-    "smogtok_station": "SmogTok station",
     "step": {
       "user": {
         "description": "How would you like to select SmogTok station?",
@@ -28,7 +27,7 @@
             "id": "SmogTok station ID"
           },
           "data_description": {
-            "smogtok_station": "Enter SmogTok station ID to configure."
+            "id": "Enter SmogTok station ID to configure."
           }
       }
     },
