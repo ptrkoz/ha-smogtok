@@ -16,7 +16,7 @@ The integration provides following entities with data from configured SmogTok st
 - PM2.5 pollution (*μg/m³*)
 - PM0.1 pollution (*μg/m³*)
 - air quality (*Very good*, *Good*, *Moderate*, *Sufficient*, *Bad* or *Very bad*)
-- air quality index (scale *1* to *6*)
+- air quality index (scale of *1* to *6*)
 
 Each entity has a *last_updated* attribute with time of the recent measurement.
 
@@ -28,7 +28,7 @@ Some stations may not include all entities listed above.
 This integration can be installed either via HACS or manually.
 
 ### Install integration via HACS (recommended)
-1. Make sure you have [HACS](https://hacs.xyz) installed in Home Assistant
+1. Make sure you have [HACS](https://hacs.xyz) installed in your Home Assistant
 
 2. Add custom repository to HACS by clicking the button below:
 
@@ -41,9 +41,9 @@ This integration can be installed either via HACS or manually.
 	
     And click **ADD**
 
-4. Search "SmogTok" in HACS and download the integration
+4. Search "SmogTok" in HACS and click on the found integration, next click **DOWNLOAD** (blue button in the bottom right corner)
 
-5. Restart  Home Assistant
+5. Restart Home Assistant
 
 ### Install integration manually
 
