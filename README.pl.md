@@ -61,7 +61,7 @@ Lub przejdź do: **Ustawienia** >> **Urządzenia oraz usługi** >> **Dodaj integ
 
 Możesz dodać stację SmogTok wybierając ją z listy stacji aktywnych w ostatnich 30 dniach lub wprowadzić manualnie ID stacji.
 
-<img width="231" height="159" alt="Screenshot 2026-02-15 at 15-38-56 Integracje – Home Assistant" src="https://github.com/user-attachments/assets/ef567768-7e74-4cdb-ae42-92fabe56a9ff" />
-<img width="278" height="175" alt="Screenshot 2026-02-15 at 15-39-29 Integracje – Home Assistant" src="https://github.com/user-attachments/assets/92c436b3-f757-4e01-a33f-9191fc92bbd0" />
-<img width="282" height="187" alt="Screenshot 2026-02-15 at 15-39-45 Integracje – Home Assistant" src="https://github.com/user-attachments/assets/395c8b6e-11c5-4c2c-8a93-d913988e3f24" />
+<img width="231" height="159" alt="Zrzut ekranu metody konfiguracji integracji SmogTok" src="https://github.com/user-attachments/assets/ef567768-7e74-4cdb-ae42-92fabe56a9ff" />
+<img width="278" height="175" alt="Zrzut ekranu konfiguracji integracji SmogTok przez liste stacji" src="https://github.com/user-attachments/assets/92c436b3-f757-4e01-a33f-9191fc92bbd0" />
+<img width="282" height="187" alt="Zrzut ekranu konfiguracji integracji SmogTok przez podanie ID stacji" src="https://github.com/user-attachments/assets/395c8b6e-11c5-4c2c-8a93-d913988e3f24" />
 
