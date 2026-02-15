@@ -47,9 +47,8 @@
     },
     "entity": {
         "sensor": {
-            "air_quality": { "name": "Air quality" },
-            "air_quality_index": {
-                "name": "Air quality index",
+            "air_quality": {
+                "name": "Air quality",
                 "state": {
                 "bad": "Bad",
                 "good": "Good",
@@ -73,6 +72,7 @@
                 }
                 }
             },
+            "air_quality_index": {"name": "Air quality index"},
             "temperature": {"name": "Temperature"},
             "humidity": {"name": "Humidity"},
             "pressure": {"name": "Air pressure"},

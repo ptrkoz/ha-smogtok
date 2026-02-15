@@ -27,15 +27,15 @@ ENTITY_DESCRIPTIONS = (
         key="air_quality",
         name="Air Quality",
         icon="mdi:air-filter",
-        state_class=SensorStateClass.MEASUREMENT,
+        device_class=SensorDeviceClass.ENUM,
+        options=["very_bad", "bad", "sufficient", "moderate", "good", "very_good"],
         translation_key="air_quality",
     ),
     SensorEntityDescription(
         key="air_quality_index",
         name="Air Quality Index",
         icon="mdi:air-filter",
-        device_class=SensorDeviceClass.ENUM,
-        options=["very_bad", "bad", "sufficient", "moderate", "good", "very_good"],
+        state_class=SensorStateClass.MEASUREMENT,
         translation_key="air_quality_index",
     ),
     SensorEntityDescription(
@@ -141,9 +141,9 @@ class SmogTokSensor(SmogTokEntity, SensorEntity):
         self.entity_description = entity_description
 
     @staticmethod
-    def get_air_quality_index(air_quality: int) -> str | None:
+    def get_air_quality_from_aqi(aqi: int) -> str | None:
         """Get AQI string from number."""
-        air_quality_index = {
+        air_quality = {
             0: "no_data",
             1: "very_good",
             2: "good",
@@ -152,7 +152,7 @@ class SmogTokSensor(SmogTokEntity, SensorEntity):
             5: "bad",
             6: "very_bad",
         }
-        return air_quality_index.get(air_quality)
+        return air_quality.get(aqi)
 
     def get_regs(self, regs: dict, regname: str, with_aqi: bool = False) -> str | None:
         """Get entity state from REGS array and updates it's attributes."""
@@ -164,10 +164,10 @@ class SmogTokSensor(SmogTokEntity, SensorEntity):
                 if with_aqi:
                     self._attr_extra_state_attributes.update(
                         {
-                            "air_quality": reg.get("IJP"),
-                            "air_quality_index": SmogTokSensor.get_air_quality_index(
+                            "air_quality": SmogTokSensor.get_air_quality_from_aqi(
                                 reg.get("IJP")
                             ),
+                            "air_quality_index": reg.get("IJP"),
                             "percent": reg.get("PERCENT"),
                         }
                     )
@@ -182,11 +182,11 @@ class SmogTokSensor(SmogTokEntity, SensorEntity):
             return None
 
         if self.entity_description.key == "air_quality":
-            air_quality = apiData.get("IJP")
+            air_quality = SmogTokSensor.get_air_quality_from_aqi(apiData.get("IJP"))
             self._attr_extra_state_attributes = {"last_updated": apiData.get("DT")}
             return air_quality
         if self.entity_description.key == "air_quality_index":
-            air_quality_index = SmogTokSensor.get_air_quality_index(apiData.get("IJP"))
+            air_quality_index = apiData.get("IJP")
             self._attr_extra_state_attributes = {"last_updated": apiData.get("DT")}
             return air_quality_index
         if self.entity_description.key == "temperature":
