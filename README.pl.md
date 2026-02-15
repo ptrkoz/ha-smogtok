@@ -1,6 +1,6 @@
 # Integracja SmogTok dla Home Assistant
 
-[🇬🇧 English](https://github.com/ptrkoz/ha-smogtok/) | 🇵🇱 Polski
+[🇬🇧 English](https://github.com/ptrkoz/ha-smogtok) | 🇵🇱 Polski
 
 
 Niestandardowa integracja SmogTok dostarczająca dane o jakości powietrza z stacji SmogTok do Home Assistant.
