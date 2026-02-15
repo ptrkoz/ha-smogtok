@@ -1,5 +1,6 @@
 {
   "config": {
+    "smogtok_station": "SmogTok station",
     "step": {
       "user": {
         "description": "How would you like to select SmogTok station?",
