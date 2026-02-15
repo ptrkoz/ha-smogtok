@@ -2,11 +2,10 @@ name: Test hassfest
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
   push:
-    branches: ["master"]
+    branches: ["main"]
   workflow_dispatch:
-    branches: ["master"]
 
 jobs:
   hassfest:
