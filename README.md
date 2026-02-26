@@ -3,9 +3,9 @@
 🇬🇧 English | [🇵🇱 Polski](README.pl.md)
 
 
-SmogTok custom integration provides air quality data from SmogTok stations to Home Assistant.
+SmogTok custom integration provides air quality data from [SmogTok](https://smogtok.com/) stations to [Home Assistant](https://www.home-assistant.io/).
 
-<img width="678" height="497" alt="SmogTok integration entities screenshot" src="https://github.com/user-attachments/assets/9d5cb66e-a48b-47bb-9bbb-449ba3147612" />
+<img width="778" height="498" alt="SmogTok integration entities screenshot" src="https://github.com/user-attachments/assets/f1abb101-79f0-472c-afa4-37fe2ea36efd" />
 
 
 The integration provides following entities with data from configured SmogTok station:
@@ -22,6 +22,7 @@ Each entity has a *last_updated* attribute with time of the recent measurement.
 
 Some stations may not include all entities listed above.
 
+**Disclaimer** This is not an official integration from or supported by the SmogTok
 
 ## Installation
 
@@ -59,8 +60,17 @@ To configure this integration in Home Assistant click the button below:
 
 Or go to: **Settings** >> **Devices & services** >> **Add integration** >> **SmogTok**
 
-You can add your SmogTok station be choosing it from list of stations active in the last 30 days or by manually entering station ID.
 
-<img width="241" height="163" alt="SmogTok integration select configuration method screenshot" src="https://github.com/user-attachments/assets/1dc67251-8e9f-4ec1-8dbf-dce59114c880" />
-<img width="282" height="176" alt="SmogTok integration select station from the list screenshot" src="https://github.com/user-attachments/assets/ea3fae98-8489-4b4f-aa8d-cede8510a54c" />
-<img width="278" height="187" alt="SmogTok integration select station by ID screenshot" src="https://github.com/user-attachments/assets/4a9821b4-c4ac-4730-828b-063851c7101c" />
+<img width="450" height="276" alt="SmogTok integration select configuration method screenshot" src="https://github.com/user-attachments/assets/f4903d8d-919c-4401-933e-b5234e7e56c4" />
+
+
+You can add your SmogTok station in 3 ways:
+- by finding the nearest stations and picking one of them
+  
+  <img width="446" height="296" alt="SmogTok integration select station from the nearest ones screenshot" src="https://github.com/user-attachments/assets/132b4652-219f-4aa8-a4da-f377f0c21a2b" />
+- by picking it from alphabetical list of active stations
+
+  <img width="453" height="246" alt="SmogTok integration select station from the alphabetical list screenshot" src="https://github.com/user-attachments/assets/62eab8bd-0beb-45cb-ac4e-b0839f1844a6" />
+- by manually entering station ID
+
+  <img width="456" height="309" alt="SmogTok integration select station by ID screenshot" src="https://github.com/user-attachments/assets/e6b1239a-6323-4201-a824-92ebc914e891" />
