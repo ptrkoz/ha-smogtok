@@ -26,7 +26,6 @@ ENTITY_DESCRIPTIONS = (
     SensorEntityDescription(
         key="air_quality",
         name="Air Quality",
-        icon="mdi:air-filter",
         device_class=SensorDeviceClass.ENUM,
         options=["very_bad", "bad", "sufficient", "moderate", "good", "very_good"],
         translation_key="air_quality",
@@ -34,13 +33,11 @@ ENTITY_DESCRIPTIONS = (
     SensorEntityDescription(
         key="air_quality_index",
         name="Air Quality Index",
-        icon="mdi:air-filter",
         state_class=SensorStateClass.MEASUREMENT,
         translation_key="air_quality_index",
     ),
     SensorEntityDescription(
         key="temperature",
-        icon="mdi:thermometer",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement="°C",
         device_class=SensorDeviceClass.TEMPERATURE,
@@ -48,7 +45,6 @@ ENTITY_DESCRIPTIONS = (
     ),
     SensorEntityDescription(
         key="humidity",
-        icon="mdi:water-percent",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement="%",
         device_class=SensorDeviceClass.HUMIDITY,
@@ -56,7 +52,6 @@ ENTITY_DESCRIPTIONS = (
     ),
     SensorEntityDescription(
         key="pressure",
-        icon="mdi:gauge",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement=UnitOfPressure.HPA,
         device_class=SensorDeviceClass.PRESSURE,
@@ -64,7 +59,6 @@ ENTITY_DESCRIPTIONS = (
     ),
     SensorEntityDescription(
         key="pm01",
-        icon="mdi:molecule",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement="μg/m³",
         device_class=SensorDeviceClass.PM1,
@@ -72,7 +66,6 @@ ENTITY_DESCRIPTIONS = (
     ),
     SensorEntityDescription(
         key="pm25",
-        icon="mdi:molecule",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement="μg/m³",
         device_class=SensorDeviceClass.PM25,
@@ -80,7 +73,6 @@ ENTITY_DESCRIPTIONS = (
     ),
     SensorEntityDescription(
         key="pm10",
-        icon="mdi:molecule",
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement="μg/m³",
         device_class=SensorDeviceClass.PM10,

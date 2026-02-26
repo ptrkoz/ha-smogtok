@@ -4,22 +4,33 @@
       "user": {
         "description": "How would you like to select SmogTok station?",
         "menu_options": {
-          "station_list": "Select SmogTok station from the list (recommended)",
+          "station_geolocation": "Find SmogTok station near your location (recommended)",
+          "station_list": "Pick SmogTok station from the list",
           "station_id": "Enter SmogTok station ID manually (advanced)"
         },
         "menu_option_descriptions": {
-          "station_list": "List of SmogTok stations active in the last 30 days",
+          "station_geolocation": "List of active SmogTok stations within {nearby_radius} kilometers radius",
+          "station_list": "List of active SmogTok stations in alphabetical order",
           "station_id": "Provide ID of a SmogTok station"
         }
       },
-      "station_list": {
-        "description": "List of SmogTok stations active in the last 30 days.\nIf you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).",
-        "data": {
+      "station_geolocation": {
+          "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).\nYou can go to [Settings -> Areas, labels & zones -> Zones](/config/zone) and adjust your home location.",
+          "data": {
           "smogtok_station": "SmogTok station"
-        },
-        "data_description": {
-          "smogtok_station": "Select SmogTok station from the list to configure."
-        }
+          },
+          "data_description": {
+          "smogtok_station": "List of {station_number} SmogTok stations active in the last 30 days within {nearby_radius} kilometers radius from the nearest one."
+          }
+      },
+      "station_list": {
+          "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).",
+          "data": {
+          "smogtok_station": "SmogTok station"
+          },
+          "data_description": {
+          "smogtok_station": "List of SmogTok stations active in the last 30 days in alphabetical order."
+          }
       },
       "station_id": {
           "description": "To get the SmogTok station ID:\n1. go to {deviceslist_url}\n2. select the station from which you want to get data\n3. the station ID is in the URL address, e.g. for {example_deviceslist_url} the station ID is {example_device_id}",
@@ -35,6 +46,8 @@
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_response": "Invalid API response from the server",
       "no_data_available": "No data available for selected station",
+      "no_stations": "No active stations were found",
+      "no_nearby_stations": "No nearby stations were found",
       "unknown": "[%key:common::config_flow::error::unknown%]"
     },
     "abort": {

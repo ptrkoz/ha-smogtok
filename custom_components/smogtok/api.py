@@ -9,14 +9,7 @@ from typing import Any
 import aiohttp
 
 from .const import LIST_OF_STATIONS_API_URL, STATION_DETAILS_API_URL
-
-
-class SmogTokClientError(Exception):
-    """Custom exception to indicate SmogTok API errors."""
-
-
-class SmogTokClientCommunicationError(SmogTokClientError):
-    """Exception to indicate a communication error."""
+from .exceptions import SmogTokClientCommunicationError, SmogTokClientError
 
 
 class SmogTokClient:

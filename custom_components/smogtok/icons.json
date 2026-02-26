@@ -1,0 +1,12 @@
+{
+  "entity": {
+    "sensor": {
+      "air_quality": {
+        "default": "mdi:air-filter"
+      },
+      "air_quality_index": {
+        "default": "mdi:air-filter"
+      }
+    }
+  }
+}

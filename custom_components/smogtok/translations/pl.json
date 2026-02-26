@@ -11,27 +11,40 @@
             "cannot_connect": "Nie udało się połączyć",
             "invalid_response": "Nieprawidłowa odpowiedź API od serwera",
             "no_data_available": "Brak danych dla wybranej stacji",
+            "no_stations": "No active stations were found",
+            "no_nearby_stations": "No nearby stations were found",
             "unknown": "Nieoczekiwany błąd"
         },
         "step": {
             "user": {
-                "description": "W jaki sposób chcesz wybrać stację SmogTok?",
+                "description": "W jaki sposób chcesz wskazać stację SmogTok?",
                 "menu_options": {
-                "station_list": "Wybierz stację SmogTok z listy (zalecane)",
+                "station_geolocation": "Znajdź stację SmogTok blisko mojej lokalizacji (zalecane)",
+                "station_list": "Wybierz stację SmogTok z listy",
                 "station_id": "Wprowadź ręcznie ID stacji SmogTok (zaawansowane)"
                 },
                 "menu_option_descriptions": {
-                  "station_list": "Lista stacji SmogTok aktywnych w ostatnich 30 dniach",
+                  "station_geolocation": "Lista aktywnych stacji SmogTok w promieniu {nearby_radius} kilometrów",
+                  "station_list": "Lista aktywnych stacji SmogTok w porządku alfabetycznym",
                   "station_id": "Wpisz ID stacji SmogTok"
                 }
             },
+            "station_geolocation": {
+                "description": "Jeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).\nMożesz przejść do [Ustawienia -> Obszary, strefy i etykiety -> Strefy](/config/zone) i dostosować lokalizację swojego domu.",
+                "data": {
+                "smogtok_station": "Stacja SmogTok"
+                },
+                "data_description": {
+                "smogtok_station": "Lista {station_number} stacji SmogTok aktywnych w ostatnich 30 dniach w promieniu {nearby_radius} kilometrów od najbliższej."
+                }
+            },
             "station_list": {
-                "description": "Lista stacji SmogTok aktywnych w ostatnich 30 dniach.\nJeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).",
+                "description": "Jeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).",
                 "data": {
                     "smogtok_station": "Stacja SmogTok"
                 },
                 "data_description": {
-                  "smogtok_station": "Wybierz stacje SmogTok z listy, aby skonfigurować."
+                  "smogtok_station": "Lista stacji SmogTok aktywnych w ostatnich 30 dniach w porządku alfabetycznym."
                 }
             },
             "station_id": {
