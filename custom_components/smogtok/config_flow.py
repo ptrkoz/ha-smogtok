@@ -58,7 +58,7 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
             description_placeholders={"nearby_radius": str(NEARBY_STATIONS_KM_RADIUS)},
         )
 
-    async def get_list_of_stations(self):
+    async def get_list_of_stations(self) -> list[dict[str, Any]]:
         """Gets the list of SmogTok stations."""
         client = SmogTokClient(
             session=async_create_clientsession(self.hass),
@@ -69,6 +69,47 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
     def get_distance_to_station(e: SelectOptionDict) -> float:
         """Returns station distance from SelectOptionDict object."""
         return float(e.get("label").split(" - ")[-1].split(" ")[0])
+
+    def get_available_options(
+        self, stations: list[dict[str, Any]], with_geolocation: bool = False
+    ) -> list[SelectOptionDict]:
+        """Returns stations that can be selected."""
+        options: list[SelectOptionDict] = []
+        timeThreshold = datetime.now() - timedelta(days=ACTIVE_STATIONS_DAYS_THRESHOLD)
+        for station in stations:
+            if (
+                "ID" in station
+                and station["ID"] > 0
+                and "NAME" in station
+                and station["NAME"] != ""
+                and "IS_EXTERNAL" in station
+                and "DT" in station
+                and len(station["DT"]) == 19
+                and datetime.strptime(station["DT"], "%Y-%m-%d %H:%M:%S")
+                > timeThreshold
+            ):
+                value = str(station["ID"])
+                label = f"{station['NAME']}"
+                if station["IS_EXTERNAL"] != 1:
+                    label += " [indoor]"
+                label += f" (ID: {station['ID']})"
+                if with_geolocation:
+                    if "GEOLOCATION" in station and "," in station["GEOLOCATION"]:
+                        distance_to_station = round(
+                            geodesic(
+                                station["GEOLOCATION"],
+                                f"{self.hass.config.latitude},{self.hass.config.longitude}",
+                            ).kilometers,
+                            2,
+                        )
+                        if distance_to_station <= NEARBY_STATIONS_KM_RADIUS:
+                            label += f" - {distance_to_station} km"
+                        else:
+                            continue
+                    else:
+                        continue
+                options.append(SelectOptionDict(value=value, label=label))
+        return options
 
     async def async_step_station_geolocation(
         self, user_input: dict[str, Any] | None = None
@@ -88,43 +129,9 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
             _LOGGER.exception("Unexpected exception")
             errors["base"] = "unknown"
         else:
-            timeThreshold = datetime.now() - timedelta(
-                days=ACTIVE_STATIONS_DAYS_THRESHOLD
-            )
-
-            options: list[SelectOptionDict] = [
-                SelectOptionDict(
-                    value=str(station["ID"]),
-                    label=f"{station['NAME']} (ID: {station['ID']}) - {round(geodesic(station['GEOLOCATION'], f'{self.hass.config.latitude},{self.hass.config.longitude}').kilometers, 2)} km",
-                )
-                for station in stations
-                if "ID" in station
-                and station["ID"] > 0
-                and "NAME" in station
-                and station["NAME"] != ""
-                and "DT" in station
-                and len(station["DT"]) == 19
-                and datetime.strptime(station["DT"], "%Y-%m-%d %H:%M:%S")
-                > timeThreshold
-                and "GEOLOCATION" in station
-                and "," in station["GEOLOCATION"]
-            ]
-
-            if options is None or len(options) == 0:
-                errors["base"] = "no_stations"
+            options: list[SelectOptionDict] = self.get_available_options(stations, True)
 
             options.sort(key=SmogTokFlowHandler.get_distance_to_station)
-
-            cutoff = 0
-            for n in options:
-                if (
-                    SmogTokFlowHandler.get_distance_to_station(n)
-                    < NEARBY_STATIONS_KM_RADIUS
-                ):
-                    cutoff += 1
-                else:
-                    break
-            options = options[:cutoff]
 
             if options is None or len(options) == 0:
                 errors["base"] = "no_nearby_stations"
@@ -143,6 +150,7 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
         placeholders = {
             "station_number": str(len(options)),
             "nearby_radius": str(NEARBY_STATIONS_KM_RADIUS),
+            "active_days": str(ACTIVE_STATIONS_DAYS_THRESHOLD),
         }
 
         return self.async_show_form(
@@ -170,24 +178,9 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
             _LOGGER.exception("Unexpected exception")
             errors["base"] = "unknown"
         else:
-            timeThreshold = datetime.now() - timedelta(
-                days=ACTIVE_STATIONS_DAYS_THRESHOLD
+            options: list[SelectOptionDict] = self.get_available_options(
+                stations, False
             )
-            options: list[SelectOptionDict] = [
-                SelectOptionDict(
-                    value=str(station["ID"]),
-                    label=f"{station['NAME']} (ID: {station['ID']})",
-                )
-                for station in stations
-                if "ID" in station
-                and station["ID"] > 0
-                and "NAME" in station
-                and station["NAME"] != ""
-                and "DT" in station
-                and len(station["DT"]) == 19
-                and datetime.strptime(station["DT"], "%Y-%m-%d %H:%M:%S")
-                > timeThreshold
-            ]
 
             if options is None or len(options) == 0:
                 errors["base"] = "no_stations"
@@ -203,10 +196,16 @@ class SmogTokFlowHandler(ConfigFlow, domain=DOMAIN):
                 )
             }
         )
+
+        placeholders = {
+            "active_days": str(ACTIVE_STATIONS_DAYS_THRESHOLD),
+        }
+
         return self.async_show_form(
             step_id="station_list",
             data_schema=schema,
             errors=errors,
+            description_placeholders=placeholders,
         )
 
     async def async_step_station_id(

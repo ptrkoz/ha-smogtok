@@ -30,21 +30,21 @@
                 }
             },
             "station_geolocation": {
-                "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).\nYou can go to [Settings -> Areas, labels & zones -> Zones](/config/zone) and adjust your home location.",
+                "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).\nYou can go to [Settings -> Areas, labels & zones -> Zones](/config/zone) and adjust your home location.\n[indoor] means that the station is installed inside the building.",
                 "data": {
                 "smogtok_station": "SmogTok station"
                 },
                 "data_description": {
-                "smogtok_station": "List of {station_number} SmogTok stations active in the last 30 days within {nearby_radius} kilometers radius from the nearest one."
+                "smogtok_station": "List of {station_number} SmogTok stations active in the last {active_days} days within {nearby_radius} kilometers radius sorted from the nearest one."
                 }
             },
             "station_list": {
-                "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).",
+                "description": "If you don't see your station, it may not be active anymore or it may be a new station. In that case, you can try to enter station ID manually (open integration setup again).\n[indoor] means that the station is installed inside the building.",
                 "data": {
                 "smogtok_station": "SmogTok station"
                 },
                 "data_description": {
-                "smogtok_station": "List of SmogTok stations active in the last 30 days in alphabetical order."
+                "smogtok_station": "List of SmogTok stations active in the last {active_days} days in alphabetical order."
                 }
             },
             "station_id": {
