@@ -11,8 +11,8 @@
             "cannot_connect": "Nie udało się połączyć",
             "invalid_response": "Nieprawidłowa odpowiedź API od serwera",
             "no_data_available": "Brak danych dla wybranej stacji",
-            "no_stations": "No active stations were found",
-            "no_nearby_stations": "No nearby stations were found",
+            "no_stations": "Nie znaleziono żadnych aktywnych stacji",
+            "no_nearby_stations": "Nie znaleziono żadnych stacji w pobliżu",
             "unknown": "Nieoczekiwany błąd"
         },
         "step": {
