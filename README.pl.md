@@ -35,7 +35,7 @@ Tą integrację można zainstalować przez HACS lub manualnie.
 
 	[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ptrkoz&category=integration&repository=ha-smogtok)
 	
-	Lub przejdź do: **HACS** -> **3 kropki (⋮)** -> **Niestandardowe repozytoria**
+	Lub przejdź do: **HACS** → **3 kropki (⋮)** → **Niestandardowe repozytoria**
 
 	- Repozytorium: https://github.com/ptrkoz/ha-smogtok
 	- Typ: **Integracja**
@@ -48,7 +48,7 @@ Tą integrację można zainstalować przez HACS lub manualnie.
 
 ### Instalacja integracji manualnie
 
-1. Sklonuj to repozytorium lub pobierz jako plik zip, a następnie dodaj/scal z zawartością folderu `custom_components/` w twoim katalogu konfiguracji
+1. Pobierz [smogtok.zip](https://github.com/ptrkoz/ha-smogtok/releases/latest/download/smogtok.zip) z [ostatniego wydania](https://github.com/ptrkoz/ha-smogtok/releases/latest), rozpakuj go, a następnie dodaj/scal z zawartością folderu `custom_components/` w twoim katalogu konfiguracji
 
 2. Zrestartuj Home Assistant
 
@@ -58,7 +58,7 @@ Skonfiguruj tą integrację w Home Assistant używając przycisku poniżej:
 
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=smogtok)
 
-Lub przejdź do: **Ustawienia** >> **Urządzenia oraz usługi** >> **Dodaj integrację** >> **SmogTok**
+Lub przejdź do: **Ustawienia** → **Urządzenia oraz usługi** → **Dodaj integrację** → **SmogTok**
 
 <img width="453" height="283" alt="Zrzut ekranu metody konfiguracji integracji SmogTok" src="https://github.com/user-attachments/assets/7f006523-ecca-4dad-a1f5-3fc1ee9aacf4" />
 

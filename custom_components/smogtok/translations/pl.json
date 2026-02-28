@@ -30,7 +30,7 @@
                 }
             },
             "station_geolocation": {
-                "description": "Jeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).\nMożesz przejść do [Ustawienia -> Obszary, strefy i etykiety -> Strefy](/config/zone) i dostosować lokalizację swojego domu.\n[indoor] oznacza, że stacja jest zainstalowana wewnątrz budynku.",
+                "description": "Jeśli nie widzisz swojej stacji, może ona nie być już aktywna lub może być nową stacją. W takim przypadku możesz spróbować wprowadzić ID stacji ręcznie (otwórz ponownie dodawnie integracji).\nMożesz przejść do [Ustawienia → Obszary, strefy i etykiety → Strefy](/config/zone) i dostosować lokalizację swojego domu.\n[indoor] oznacza, że stacja jest zainstalowana wewnątrz budynku.",
                 "data": {
                 "smogtok_station": "Stacja SmogTok"
                 },
