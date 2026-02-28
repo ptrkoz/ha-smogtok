@@ -1,3 +1,19 @@
+[![HACS Default][hacs_shield]][hacs]
+[![GitHub Latest Release][releases_shield]][latest_release]
+[![GitHub All Releases][downloads_total_shield]][releases]
+[![Installations][installations_shield]][releases]
+
+[hacs_shield]: https://img.shields.io/static/v1.svg?label=HACS&message=Custom&color=orange&labelColor=41bdf5&logo=HomeAssistantCommunityStore&logoColor=white&style=flat-square
+[hacs]:https://hacs.xyz/docs/faq/custom_repositories/
+
+[releases_shield]: https://img.shields.io/github/v/release/ptrkoz/ha-smogtok?style=flat-square
+[latest_release]: https://github.com/ptrkoz/ha-smogtok/releases/latest
+
+[downloads_total_shield]: https://img.shields.io/github/downloads/ptrkoz/ha-smogtok/total?style=flat-square
+[releases]: https://github.com/ptrkoz/ha-smogtok/releases
+
+[installations_shield]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fanalytics.home-assistant.io%2Fcustom_integrations.json&query=%24.smogtok.total&color=41bdf5&label=analytics&style=flat-square
+
 # Integracja SmogTok dla Home Assistant
 
 [🇬🇧 English](https://github.com/ptrkoz/ha-smogtok) | 🇵🇱 Polski
