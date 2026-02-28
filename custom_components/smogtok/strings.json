@@ -89,7 +89,7 @@
       "temperature": {"name": "[%key:common::entity::sensor::temperature%]"},
       "humidity": {"name": "[%key:common::entity::sensor::humidity%]"},
       "pressure": {"name": "[%key:common::entity::sensor::air_pressure%]"},
-      "pm01": {"name": "PM1.0"},
+      "pm01": {"name": "PM0.1"},
       "pm25": {"name": "PM2.5"},
       "pm10": {"name": "PM10"}
     }
