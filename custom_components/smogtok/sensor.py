@@ -10,7 +10,12 @@ from homeassistant.components.sensor import (
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfPressure
+from homeassistant.const import (
+    CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
+    PERCENTAGE,
+    UnitOfPressure,
+    UnitOfTemperature,
+)
 
 from .entity import SmogTokEntity
 
@@ -39,14 +44,14 @@ ENTITY_DESCRIPTIONS = (
     SensorEntityDescription(
         key="temperature",
         state_class=SensorStateClass.MEASUREMENT,
-        native_unit_of_measurement="°C",
+        native_unit_of_measurement=UnitOfTemperature.CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
         translation_key="temperature",
     ),
     SensorEntityDescription(
         key="humidity",
         state_class=SensorStateClass.MEASUREMENT,
-        native_unit_of_measurement="%",
+        native_unit_of_measurement=PERCENTAGE,
         device_class=SensorDeviceClass.HUMIDITY,
         translation_key="humidity",
     ),
@@ -60,21 +65,21 @@ ENTITY_DESCRIPTIONS = (
     SensorEntityDescription(
         key="pm01",
         state_class=SensorStateClass.MEASUREMENT,
-        native_unit_of_measurement="μg/m³",
+        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
         device_class=SensorDeviceClass.PM1,
         translation_key="pm01",
     ),
     SensorEntityDescription(
         key="pm25",
         state_class=SensorStateClass.MEASUREMENT,
-        native_unit_of_measurement="μg/m³",
+        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
         device_class=SensorDeviceClass.PM25,
         translation_key="pm25",
     ),
     SensorEntityDescription(
         key="pm10",
         state_class=SensorStateClass.MEASUREMENT,
-        native_unit_of_measurement="μg/m³",
+        native_unit_of_measurement=CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
         device_class=SensorDeviceClass.PM10,
         translation_key="pm10",
     ),
