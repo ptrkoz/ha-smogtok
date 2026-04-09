@@ -3,8 +3,8 @@
 [![GitHub All Releases][downloads_total_shield]][releases]
 [![Installations][installations_shield]][releases]
 
-[hacs_shield]: https://img.shields.io/static/v1.svg?label=HACS&message=Custom&color=orange&labelColor=41bdf5&logo=HomeAssistantCommunityStore&logoColor=white&style=flat-square
-[hacs]:https://hacs.xyz/docs/faq/custom_repositories/
+[hacs_shield]: https://img.shields.io/static/v1.svg?label=HACS&message=Default&color=green&labelColor=41bdf5&logo=HomeAssistantCommunityStore&logoColor=white&style=flat-square
+[hacs]: https://github.com/hacs/default
 
 [releases_shield]: https://img.shields.io/github/v/release/ptrkoz/ha-smogtok?style=flat-square
 [latest_release]: https://github.com/ptrkoz/ha-smogtok/releases/latest
@@ -47,20 +47,15 @@ This integration can be installed either via HACS or manually.
 ### Install integration via HACS (recommended)
 1. Make sure you have [HACS](https://hacs.xyz) installed in your Home Assistant
 
-2. Add custom repository to HACS by clicking the button below:
+2. Open integration page on HACS by clicking the button below:
 
 	[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ptrkoz&category=integration&repository=ha-smogtok)
 	
-	Or go to: **HACS** → **3 dots (⋮)** → **Custom repositories**
+	Or search "SmogTok" in HACS and click on the found integration
 
-	- Repository: https://github.com/ptrkoz/ha-smogtok
-	- Type: **Integration**
-	
-    And click **ADD**
+3. Click **DOWNLOAD** on the integration page (blue button in the bottom right corner)
 
-4. Search "SmogTok" in HACS and click on the found integration, next click **DOWNLOAD** (blue button in the bottom right corner)
-
-5. Restart Home Assistant
+4. Restart Home Assistant
 
 ### Install integration manually
 
